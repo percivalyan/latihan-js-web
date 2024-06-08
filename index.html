@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagihan Listrik</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Latihan Penggunaan Variabel dan Tipe Data pada Javascript</h2>
+        <h2>Menghitung Biaya Tagihan Listrik</h2>
+        <form id="formTagihan">
+            <label for="nama">Nama Pelanggan:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="kategori">Kategori:</label>
+            <select id="kategori" name="kategori" required>
+                <option value="sosial">Sosial - 2200 VA</option>
+                <option value="rumah">Rumah Tangga - 1300 VA</option>
+                <option value="industri">Industri - 6600 VA</option>
+            </select>
+
+            <label for="periode">Periode:</label>
+            <input type="month" id="periode" name="periode" required>
+
+            <label for="jumlahPemakaian">Jumlah Pemakaian Listrik (kWh):</label>
+            <input type="number" id="jumlahPemakaian" name="jumlahPemakaian" required>
+
+            <button type="button" onclick="hitungTagihan()">SUBMIT</button>
+            <button type="reset">CANCEL</button>
+        </form>
+
+        <div id="hasil" class="hasil"></div>
+
+        <h3>Rincian Tagihan Tersimpan</h3>
+        <div id="savedBills"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
