@@ -1,7 +1,8 @@
 function hitungTagihan() {
     const nama = document.getElementById('nama').value;
     const kategori = document.getElementById('kategori').value;
-    const periode = document.getElementById('periode').value;
+    const periodeAwal = document.getElementById('periodeAwal').value;
+    const periodeAkhir = document.getElementById('periodeAkhir').value;
     const jumlahPemakaian = parseFloat(document.getElementById('jumlahPemakaian').value);
 
     let abodemen, tarifPerKwh, pajak;
@@ -37,7 +38,7 @@ function hitungTagihan() {
             </tr>
             <tr>
                 <th>Periode</th>
-                <td>${periode}</td>
+                <td>${periodeAwal} sd ${periodeAkhir}</td>
             </tr>
             <tr>
                 <th>Jumlah Pemakaian</th>
@@ -75,7 +76,8 @@ function hitungTagihan() {
     saveBill({
         nama,
         kategori,
-        periode,
+        periodeAwal,
+        periodeAkhir,
         jumlahPemakaian,
         abodemen,
         tarifPerKwh,
@@ -107,7 +109,7 @@ function displaySavedBills() {
         content += `<tr>
             <td>${bill.nama}</td>
             <td>${bill.kategori}</td>
-            <td>${bill.periode}</td>
+            <td>${bill.periodeAwal} sd ${bill.periodeAkhir}</td>
             <td>${bill.jumlahPemakaian} kWh</td>
             <td>Rp ${bill.totalTagihan.toFixed(2)}</td>
         </tr>`;
